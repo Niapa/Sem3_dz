@@ -74,9 +74,10 @@ int InputNum(string message)
 	return num;
 }
 int num = InputNum("Введите число N: ");
+Console.WriteLine($"Таблица кубов чисел от 1 до N: ");
 for(int i = 1; i <= num; i++)
 {
-	Console.WriteLine($"Таблица кубов чисел от 1 до N: {Math.Pow(i, 3)}");
+	Console.Write($"{Math.Pow(i, 3)}");
 	if(i < num)
 	{
 		Console.Write(", ");
