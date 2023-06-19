@@ -1,74 +1,12 @@
 ﻿/*
-
 Задача 19
+__________
 Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли
 оно палиндромом.
 14212 -> нет
 12821 -> да
 23432 -> да
-___________________________
-1 - int[] InputSomeNums()
-{
-    Console.Write("Введите количество чисел: ");
-    int size = int.Parse(Console.ReadLine()!);
-    int[] array = new int[size];
-    
-    for(int i = 0; i < array.Length; i++)
-    {
-        Console.Write($"Введите {i + 1}-е число: ");
-        array[i] = int.Parse(Console.ReadLine()!);
-    }
-    return array;
-}
-
-void PrintArray(int[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write(array[i]);
-        if (i < array.Length - 1)
-            Console.Write(", ");
-        else
-            Console.Write(".");
-    }
-}
-
-int[] myArray = InputSomeNums();
-PrintArray(myArray);
-__________________
-
-2 - void PrintArray(int[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write(array[i]);
-        if (i < array.Length - 1)
-            Console.Write(", ");
-        else
-            Console.Write(".");
-    }
-}
-
-int num = int.Parse(Console.ReadLine());
-int temp = num;
-
-int count = 0;
-while (temp != 0)
-{
-    temp = temp / 10; // num /= 10;
-    count++;
-}
-
-int[] array = new int[count];
-
-for (int i = array.Length - 1; i >= 0; i--)
-{
-    array[i] = num % 10;
-    num /= 10;
-}
-
-PrintArray(array);
-_______________________
+____________________________________________________________________________________________
 
 int[] InputSomeNums()
 {
@@ -91,6 +29,7 @@ PrintArray(oneArray);
 
 _________________________________________________________________________________________
 Задача 21
+__________
 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние
 между ними в 3D пространстве.
 A (3,6,8); B (2,1,-7), -> 15.84
@@ -120,8 +59,9 @@ double num6 = InputNum("Введите координату Z точки 2: ");
 
 double result = Math.Round((Distance(num1, num2, num3, num4, num5, num6)), 1);
 Console.WriteLine($"Расстояние между точками 1 и 2 = {result}");
-__________________________________________________________________________________________
+______________________________________________________________________________________________
 Задача 23
+__________
 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
 3 -> 1, 8, 27
 5 -> 1, 8, 27, 64, 125
@@ -133,10 +73,10 @@ int InputNum(string message)
 	int num = int.Parse(Console.ReadLine()!);
 	return num;
 }
-int num = InputNum("enter number N: ");
+int num = InputNum("Введите число N: ");
 for(int i = 1; i <= num; i++)
 {
-	Console.Write($"{Math.Pow(i, 3)}");
+	Console.WriteLine($"Таблица кубов чисел от 1 до N: {Math.Pow(i, 3)}");
 	if(i < num)
 	{
 		Console.Write(", ");
