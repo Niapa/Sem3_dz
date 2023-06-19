@@ -1,8 +1,4 @@
 ﻿/*
-Задача 21
-Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
-A (3,6,8); B (2,1,-7), -> 15.84
-A (7,-5, 0); B (1,-1,9) -> 11.53
 
 Задача 23
 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
@@ -16,7 +12,7 @@ A (7,-5, 0); B (1,-1,9) -> 11.53
 12821 -> да
 23432 -> да
 ___________________________
-1 копипаст: int[] InputSomeNums()
+1 - int[] InputSomeNums()
 {
     Console.Write("Введите количество чисел: ");
     int size = int.Parse(Console.ReadLine()!);
@@ -46,7 +42,7 @@ int[] myArray = InputSomeNums();
 PrintArray(myArray);
 __________________
 
-2 void PrintArray(int[] array)
+2 - void PrintArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
@@ -79,11 +75,6 @@ for (int i = array.Length - 1; i >= 0; i--)
 PrintArray(array);
 _______________________
 
-
-
-
-*/
-
 int[] InputSomeNums()
 {
     Console.Write("Введите пятизначное число: ");
@@ -102,3 +93,35 @@ void PrintArray(int[] array)
 
 int[] oneArray = InputSomeNums();
 PrintArray(oneArray);
+
+_________________________________________________________________________________________
+Задача 21
+Напишите программу, которая принимает на вход координаты двух точек и находит расстояние
+между ними в 3D пространстве.
+A (3,6,8); B (2,1,-7), -> 15.84
+A (7,-5, 0); B (1,-1,9) -> 11.53
+*/
+
+double InputNum (string message)
+{
+    Console.Write(message);
+    return double.Parse(Console.ReadLine()!);
+}
+
+double Distance (double a1, double b1, double c1, double a2,double b2, double c2)
+{
+double sum = Math.Pow((a2 - a1), 2) + Math.Pow((b2 - b1), 2) + Math.Pow((c2 - c1), 2);
+double res = Math.Sqrt(sum);
+return res;
+}
+
+double num1 = InputNum("Введите координату X точки 1: ");
+double num2 = InputNum("Введите координату Y точки 1: ");
+double num3 = InputNum("Введите координату Z точки 1: ");
+double num4 = InputNum("Введите координату X точки 2: ");
+double num5 = InputNum("Введите координату Y точки 2: ");
+double num6 = InputNum("Введите координату Z точки 2: ");
+
+
+double result = Math.Round((Distance(num1, num2, num3, num4, num5, num6)), 1);
+Console.WriteLine($"Расстояние между точками 1 и 2 = {result}");
